@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laura Rebello Arquitetura</title>
+<meta name="description" content="Arquiteta e urbanista em Maceió há mais de 16 anos. Projetos arquitetônicos, interiores, reformas, infantis, comerciais e consultorias. Atendimento presencial em Maceió e online para todo o Brasil.">
+<meta property="og:title" content="Laura Rebello Arquitetura">
+<meta property="og:description" content="Mais de 1.000 ambientes assinados em 16 anos. Solicite seu orçamento.">
+<meta property="og:image" content="https://i.pinimg.com/736x/ad/79/8b/ad798be5beed3121264c3a09f41bf736.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Hanken+Grotesk:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: régua de prancha — conteúdo alinhado à esquerda numa grade de 12 colunas,
+   cotas (linhas de dimensão) como linguagem gráfica, um único acento: o verde-água do mar de Maceió. */
+:root{
+  --stone:#E8E5DF;      /* fundo: pedra calcária */
+  --paper:#F4F2EE;      /* painéis */
+  --ink:#1E201F;        /* texto e botões */
+  --graphite:#5B5E5B;   /* texto secundário */
+  --sea:#2D6A68;        /* acento: mar de Maceió */
+  --oak:#9C7C5A;        /* madeira: cotas e detalhes */
+  --line:rgba(30,32,31,.16);
+  --on-ink:#F4F2EE;
+  --display:"Tenor Sans","Gill Sans","Optima",sans-serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --wrap:1240px;
+  --gut:max(20px, env(safe-area-inset-left,0px));
+  --gutr:max(20px, env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--stone);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sea);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:.01em}
+p{margin:0}
+.lead{font-size:1.125rem;color:var(--graphite);max-width:34em}
+.tag{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite)}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;gap:.7em;font:500 .95rem/1 var(--body);padding:1.05em 1.5em;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--on-ink)}
+.btn.sea{background:var(--sea);border-color:var(--sea)}
+.btn.sea:hover{background:transparent;color:var(--sea)}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+
+/* Cota: linha de dimensão de desenho técnico */
+.cota{display:flex;align-items:center;gap:.8em;color:var(--oak);font-size:.8rem;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.cota::before,.cota::after{content:"";flex:1;height:1px;background:currentColor;min-width:24px}
+.cota span{white-space:nowrap}
+.cota.ends::before{border-left:1px solid currentColor;height:9px;background:linear-gradient(currentColor,currentColor) center/100% 1px no-repeat}
+.cota.ends::after{border-right:1px solid currentColor;height:9px;background:linear-gradient(currentColor,currentColor) center/100% 1px no-repeat}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(232,229,223,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--stone)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:16px}
+.brand{text-decoration:none;display:grid;line-height:1.1}
+.brand b{font-family:var(--display);font-weight:400;font-size:1.25rem;letter-spacing:.32em}
+.brand small{font-size:.62rem;letter-spacing:.42em;color:var(--graphite);margin-top:4px}
+nav.links{display:flex;gap:30px;font-size:.92rem}
+nav.links a{text-decoration:none;color:var(--graphite);padding-block:4px;border-bottom:1px solid transparent}
+nav.links a:hover{color:var(--ink);border-color:var(--ink)}
+.top .btn{padding:.85em 1.2em;font-size:.88rem;white-space:nowrap}
+@media (max-width:880px){nav.links{display:none}}
+@media (max-width:520px){.brand b{letter-spacing:.2em;font-size:1rem}.brand small{letter-spacing:.3em}.top .btn{font-size:.82rem;padding:.8em 1em}.top .btn .long{display:none}.top a.btn .short{display:inline}}
+.top .btn .short{display:none}
+section{scroll-margin-top:76px}
+
+/* Hero */
+.hero{padding-block:56px 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:end}
+.hero h1{font-size:clamp(2.6rem,6.2vw,5.6rem);line-height:.98;text-transform:uppercase;margin-top:22px}
+.hero .lead{margin-top:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-photo{position:relative;aspect-ratio:4/4.4;max-width:100%;overflow:hidden;background:var(--paper)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;animation:settle 1.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes settle{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero-photo figcaption{position:absolute;left:16px;bottom:16px;background:var(--paper);padding:8px 12px;font-size:.8rem;color:var(--graphite)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);margin-top:56px}
+.fact{padding:26px 24px 28px 0;display:grid;gap:6px}
+.fact + .fact{padding-left:24px;border-left:1px solid var(--line)}
+.fact strong{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1;font-variant-numeric:tabular-nums}
+.fact span{font-size:.9rem;color:var(--graphite)}
+.stars{color:var(--oak);letter-spacing:.1em;font-size:.95rem}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-photo{aspect-ratio:4/3.6}
+  .facts{grid-template-columns:1fr}
+  .fact + .fact{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+}
+
+/* Seções */
+section{padding-block:104px}
+.sec-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:end;margin-bottom:52px}
+.sec-head h2{font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.04}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr;gap:18px}section{padding-block:72px}}
+
+/* Serviços */
+.services{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.svc{display:grid;grid-template-rows:auto 1fr;background:var(--paper);text-decoration:none;color:inherit}
+.svc figure{margin:0;aspect-ratio:3/4;overflow:hidden}
+.svc img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.svc:hover img{transform:scale(1.04)}
+.svc div{padding:18px 18px 22px;display:grid;gap:8px;align-content:start}
+.svc h3{font-size:1.12rem;line-height:1.2}
+.svc p{font-size:.9rem;color:var(--graphite);line-height:1.5}
+@media (max-width:1060px){.services{grid-template-columns:repeat(3,minmax(0,1fr))}.services .svc:nth-child(n+4) figure{aspect-ratio:4/3}}
+@media (max-width:640px){.services{grid-template-columns:1fr}.svc{grid-template-columns:120px 1fr;grid-template-rows:auto}.svc figure,.services .svc:nth-child(n+4) figure{aspect-ratio:auto;height:100%}}
+
+/* Projeto em destaque */
+.feature{background:var(--ink);color:var(--on-ink);padding-block:0}
+.feature-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);min-height:560px}
+.feature-img{position:relative;overflow:hidden}
+.feature-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feature-txt{padding:72px 56px;display:flex;flex-direction:column;justify-content:center;gap:22px}
+.feature-txt .tag{color:rgba(244,242,238,.62)}
+.feature-txt h2{font-size:clamp(2.2rem,4.4vw,3.8rem);line-height:1}
+.feature-txt p{color:rgba(244,242,238,.75);max-width:30em}
+.feature .cota{color:#C4A27D}
+.feature .btn{border-color:var(--on-ink);background:transparent;color:var(--on-ink);align-self:flex-start}
+.feature .btn:hover{background:var(--on-ink);color:var(--ink)}
+@media (max-width:860px){.feature-grid{grid-template-columns:1fr}.feature-img{aspect-ratio:4/3.4}.feature-txt{padding:48px var(--gutr) 56px var(--gut)}}
+
+/* Portfólio */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{font:500 .88rem var(--body);padding:.7em 1.1em;border:1px solid var(--line);background:transparent;color:var(--graphite);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.filters button span{font-variant-numeric:tabular-nums;opacity:.6;margin-left:.35em}
+.gallery{columns:4 240px;column-gap:14px}
+.gallery button{display:block;width:100%;margin:0 0 14px;padding:0;border:0;background:var(--paper);cursor:zoom-in;break-inside:avoid;position:relative;overflow:hidden}
+.gallery img{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.gallery button:hover img{transform:scale(1.03)}
+.gallery button span{position:absolute;left:10px;bottom:10px;background:var(--paper);font-size:.76rem;padding:5px 9px;color:var(--graphite);opacity:0;transition:opacity .25s}
+.gallery button:hover span,.gallery button:focus-visible span{opacity:1}
+.more-link{margin-top:22px;font-size:.92rem;color:var(--graphite)}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(18,19,18,.94);display:grid;grid-template-rows:1fr auto;padding:max(20px,env(safe-area-inset-top,0px)) var(--gutr) max(20px,env(safe-area-inset-bottom,0px)) var(--gut)}
+.lb img{max-height:100%;max-width:100%;margin:auto;object-fit:contain;min-height:0}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;color:#E8E5DF;padding-top:14px;font-size:.9rem;gap:12px}
+.lb-bar div{display:flex;gap:8px}
+.lb button{background:transparent;border:1px solid rgba(232,229,223,.4);color:#E8E5DF;width:46px;height:46px;cursor:pointer;font-size:1.1rem}
+
+/* Depoimentos */
+.reviews{background:var(--paper)}
+.rv-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px}
+.score{display:grid;gap:12px;align-content:start}
+.score strong{font-family:var(--display);font-weight:400;font-size:6rem;line-height:.9}
+.score .stars{font-size:1.3rem}
+.score p{color:var(--graphite);font-size:.95rem}
+.rv-list{display:grid;gap:0}
+blockquote{margin:0;padding:30px 0;border-top:1px solid var(--line);display:grid;gap:14px}
+blockquote:last-child{border-bottom:1px solid var(--line)}
+blockquote p{font-family:var(--display);font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.38}
+blockquote footer{font-size:.88rem;color:var(--graphite)}
+@media (max-width:860px){.rv-grid{grid-template-columns:1fr;gap:28px}}
+
+/* Processo */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--ink)}
+.step{padding:24px 22px 0 0;display:grid;gap:10px;align-content:start}
+.step + .step{padding-left:22px;border-left:1px solid var(--line)}
+.step b{font-family:var(--display);font-weight:400;font-size:.95rem;color:var(--oak);font-variant-numeric:tabular-nums}
+.step h3{font-size:1.25rem}
+.step p{font-size:.94rem;color:var(--graphite)}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:28px}.step:nth-child(3){padding-left:0;border-left:0}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.step + .step{padding-left:0;border-left:0}}
+
+/* ===== Briefing (o momento principal da página) ===== */
+.briefing{background:var(--ink);color:var(--on-ink)}
+.briefing .sec-head h2{color:var(--on-ink)}
+.briefing .lead{color:rgba(244,242,238,.72)}
+.bf{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:0;background:var(--paper);color:var(--ink);min-height:600px}
+.bf-side{background:#DCD8D1;padding:32px 28px;display:flex;flex-direction:column;gap:20px;border-right:1px solid var(--line)}
+.bf-side .stage{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--graphite)}
+.bf-side .stage b{color:var(--ink);font-weight:600}
+.build{flex:1;display:flex;align-items:flex-end;justify-content:center;min-height:260px}
+.build svg{width:100%;max-width:300px;height:auto;overflow:visible}
+.build .floor{opacity:0;transform:translateY(-14px);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.build .floor.on{opacity:1;transform:none}
+.build .win{fill:#C9C4BB;transition:fill .6s}
+.build.lit .win{fill:#F2C879}
+.build.lit .glow{opacity:.55}
+.build .glow{opacity:0;transition:opacity 1.2s}
+.prog{display:grid;gap:8px}
+.prog-bar{height:3px;background:rgba(30,32,31,.12)}
+.prog-bar i{display:block;height:100%;background:var(--sea);width:0;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.prog small{font-size:.8rem;color:var(--graphite);font-variant-numeric:tabular-nums}
+.bf-main{padding:44px 48px;display:flex;flex-direction:column;min-width:0}
+.bf-q{flex:1;display:flex;flex-direction:column;gap:22px;animation:qin .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes qin{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.bf-q .kicker{font-size:.84rem;color:var(--sea);font-weight:600}
+.bf-q h3{font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1.12}
+.bf-q .hint{color:var(--graphite);font-size:.95rem;margin-top:-10px}
+.field{display:grid;gap:8px}
+.field label{font-size:.88rem;font-weight:500}
+.field input,.field textarea{font:400 1.15rem var(--body);color:var(--ink);background:transparent;border:0;border-bottom:1.5px solid rgba(30,32,31,.35);padding:12px 2px;width:100%;border-radius:0}
+.field textarea{border:1.5px solid rgba(30,32,31,.25);padding:14px;min-height:150px;resize:vertical;font-size:1.02rem;line-height:1.55}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--sea)}
+.fields{display:grid;gap:22px}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.opt{position:relative;text-align:left;font:500 1rem/1.3 var(--body);color:var(--ink);background:#fff;border:1.5px solid rgba(30,32,31,.14);padding:16px 16px 16px 48px;cursor:pointer;transition:border-color .2s,background .2s,transform .15s;min-height:62px}
+.opt:hover{border-color:var(--ink)}
+.opt:active{transform:scale(.98)}
+.opt::before{content:attr(data-key);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:22px;height:22px;border:1px solid rgba(30,32,31,.3);font-size:.72rem;display:grid;place-items:center;color:var(--graphite);font-weight:600}
+.opt[aria-pressed="true"]{border-color:var(--sea);background:#E4EFEE}
+.opt[aria-pressed="true"]::before{background:var(--sea);border-color:var(--sea);color:#fff;content:"✓"}
+.opt small{display:block;font-weight:400;font-size:.84rem;color:var(--graphite);margin-top:3px}
+.opt .ico{display:block;width:56px;height:28px;margin-bottom:8px;color:var(--oak)}
+.opts.pics{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.opt.pic{padding:0;overflow:hidden;display:grid;min-height:0}
+.opt.pic img{aspect-ratio:3/4;width:100%;object-fit:cover}
+.opt.pic b{display:block;padding:12px 12px 14px;font-weight:500;font-size:.94rem}
+.opt.pic::before{left:auto;right:10px;top:10px;transform:none;background:rgba(255,255,255,.9)}
+.other-in{margin-top:4px}
+.bf-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.bf-nav .back{background:none;border:0;font:500 .92rem var(--body);color:var(--graphite);cursor:pointer;padding:10px 0}
+.bf-nav .back:hover{color:var(--ink)}
+.bf-nav .keyhint{font-size:.8rem;color:var(--graphite)}
+.err{color:#A2382A;font-size:.9rem;min-height:1.3em}
+.summary{display:grid;gap:0;border-top:1px solid var(--line);font-size:.95rem;max-height:340px;overflow:auto}
+.summary div{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+.summary dt{color:var(--graphite)}
+.summary dd{margin:0;overflow-wrap:anywhere}
+.summary button{background:none;border:0;color:var(--sea);font:500 .82rem var(--body);cursor:pointer;padding:0;margin-left:8px}
+.done-actions{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:900px){
+  .bf{grid-template-columns:1fr}
+  .bf-side{flex-direction:row;align-items:center;padding:16px 20px;border-right:0;border-bottom:1px solid var(--line)}
+  .build{min-height:0;flex:none;width:88px}
+  .build svg{max-width:88px}
+  .bf-side .prog{flex:1}
+  .bf-main{padding:30px 22px}
+  .bf-nav .keyhint{display:none}
+}
+
+/* Contato */
+.contact-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px}
+.info{display:grid;gap:26px;align-content:start}
+.info dl{margin:0;display:grid;gap:18px}
+.info dt{font-size:.82rem;color:var(--graphite);margin-bottom:4px}
+.info dd{margin:0;font-size:1.06rem}
+.info dd a{text-decoration:none;border-bottom:1px solid var(--line)}
+.map{position:relative;min-height:420px;background:var(--paper);overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.9) contrast(1.05)}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}.map{min-height:300px}}
+
+footer.site{border-top:1px solid var(--line);padding-block:36px 48px;font-size:.88rem;color:var(--graphite)}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px}
+footer.site nav{display:flex;gap:20px}
+footer.site a{text-decoration:none}
+footer.site a:hover{color:var(--ink)}
+
+/* WhatsApp flutuante */
+.wa{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:80;display:flex;align-items:center;gap:10px;background:var(--sea);color:#fff;text-decoration:none;padding:13px 18px 13px 14px;font:600 .9rem var(--body);box-shadow:0 10px 30px -10px rgba(20,40,40,.55);transition:transform .2s}
+.wa:hover{transform:translateY(-2px)}
+.wa svg{width:24px;height:24px}
+@media (max-width:520px){.wa span{display:none}.wa{padding:14px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Laura Rebello Arquitetura, início">
+      <b>LAURA REBELLO</b><small>ARQUITETURA</small>
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#processo">Como trabalhamos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn" href="#orcamento"><span class="long">Solicitar orçamento</span><span class="short">Orçamento</span></a>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="cota ends" style="max-width:340px"><span>16 anos · Maceió para o Brasil</span></div>
+          <h1>Espaços que vivem com você</h1>
+          <p class="lead">Arquitetura e interiores feitos sob medida para o seu orçamento, a sua rotina e o seu jeito de morar. Acompanhamos cada fase da obra, da construção à decoração.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#orcamento">Começar meu projeto
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+            <a class="btn ghost" href="#projetos">Ver projetos</a>
+          </div>
+        </div>
+        <figure class="hero-photo" style="margin:0">
+          <img src="https://i.pinimg.com/736x/ad/79/8b/ad798be5beed3121264c3a09f41bf736.jpg" alt="Sala integrada com vista para o mar, sofá cinza e mesa de jantar escura" fetchpriority="high">
+          <figcaption>Ed. Bálsamo, Maceió</figcaption>
+        </figure>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>16+</strong><span>anos de escritório em Alagoas</span></div>
+        <div class="fact"><strong>1.000+</strong><span>ambientes assinados</span></div>
+        <div class="fact"><strong>5,0 <span class="stars" aria-hidden="true">★★★★★</span></strong><span>94 avaliações no Google</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Cada projeto é único, e começa pelo que você precisa</h2>
+        <p class="lead">Atuamos em projetos residenciais e comerciais, sempre personalizados e baseados no orçamento, nas necessidades e nas expectativas de quem vai viver o espaço.</p>
+      </div>
+      <div class="services">
+        <a class="svc" href="#orcamento" data-pick="arq">
+          <figure><img loading="lazy" src="https://i.pinimg.com/736x/87/c8/c3/87c8c389442fc86d73636a46ada262b5.jpg" alt="Sala ampla com sofá claro e janelas do piso ao teto"></figure>
+          <div><h3>Projeto arquitetônico</h3><p>Sua casa do zero, desenhada a partir dos seus desejos e do terreno.</p></div>
+        </a>
+        <a class="svc" href="#orcamento" data-pick="int">
+          <figure><img loading="lazy" src="https://i.pinimg.com/736x/a4/6c/42/a46c42e31c76ad9bb81217cba9926d95.jpg" alt="Cozinha com ilha em madeira e banquetas"></figure>
+          <div><h3>Reformas e interiores</h3><p>Composição dos espaços internos com conforto e funcionalidade.</p></div>
+        </a>
+        <a class="svc" href="#orcamento" data-pick="int">
+          <figure><img loading="lazy" src="https://i.pinimg.com/736x/62/6c/f0/626cf0e5b39881475805e8f7630f2828.jpg" alt="Quarto com duas camas e cabeceira em madeira"></figure>
+          <div><h3>Projetos infantis</h3><p>Atemporais, lúdicos e funcionais, pensados para o desenvolvimento das crianças.</p></div>
+        </a>
+        <a class="svc" href="#orcamento" data-pick="com">
+          <figure><img loading="lazy" src="https://i.pinimg.com/736x/b4/bc/68/b4bc68e65a58ee8691f478b7ee1104c6.jpg" alt="Ambiente com bancada, prateleiras e mesa redonda"></figure>
+          <div><h3>Projetos comerciais</h3><p>Construção ou reforma em qualquer área e para qualquer público.</p></div>
+        </a>
+        <a class="svc" href="#orcamento" data-pick="con">
+          <figure><img loading="lazy" src="https://i.pinimg.com/736x/a7/bb/bb/a7bbbbe10f47cde851185d7e94afa33e.jpg" alt="Cristaleira iluminada com portas de vidro"></figure>
+          <div><h3>Consultorias</h3><p>Dúvidas resolvidas e soluções sem grandes interferências no ambiente.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETO EM DESTAQUE -->
+  <section class="feature" aria-labelledby="feat-t">
+    <div class="feature-grid">
+      <div class="feature-img"><img loading="lazy" src="https://i.pinimg.com/736x/e0/5d/8a/e05d8a0aa305e187f0092b9da92596e9.jpg" alt="Cozinha integrada com ilha, banquetas e vista para a cidade"></div>
+      <div class="feature-txt">
+        <span class="tag">Projeto em destaque</span>
+        <h2 id="feat-t">Ed. Martin Sehner</h2>
+        <div class="cota ends" style="max-width:300px"><span>cozinha · estar · jantar</span></div>
+        <p>Um apartamento inteiro pensado como um só ambiente: cozinha aberta para o estar, madeira natural, iluminação embutida nos armários e a luz de Maceió entrando pela varanda.</p>
+        <a class="btn" href="#projetos" data-filter-go="Ed. Martin Sehner">Ver as fotos do projeto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section id="projetos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Projetos entregues</h2>
+        <p class="lead">Apartamentos assinados pelo escritório em Maceió. Toque em uma foto para ampliar.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar projetos" id="filters"></div>
+      <div class="gallery" id="gallery"></div>
+      <p class="more-link">Mais projetos no <a href="https://br.pinterest.com/laurarebelloarquitetura/" target="_blank" rel="noopener">Pinterest</a> e no <a href="https://www.instagram.com/laurarebello.arquitetura/" target="_blank" rel="noopener">Instagram</a>.</p>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="reviews" id="depoimentos">
+    <div class="wrap rv-grid">
+      <div class="score">
+        <span class="tag">Avaliações no Google</span>
+        <strong>5,0</strong>
+        <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
+        <p>Nota máxima em 94 avaliações de clientes.</p>
+        <a class="btn ghost" style="justify-self:start;margin-top:8px" href="https://maps.google.com/?cid=17852589541913213731" target="_blank" rel="noopener">Ler todas no Google</a>
+      </div>
+      <div class="rv-list">
+        <blockquote>
+          <p>“Amei cada detalhe do projeto e de como a Laura conseguiu captar exatamente nosso desejo. Sigo apaixonada por cada pedacinho do nosso lar que foi feito e pensado com muita competência e carinho.”</p>
+          <footer>Flavia Leão · Google</footer>
+        </blockquote>
+        <blockquote>
+          <p>“Laura é uma arquiteta de muito bom gosto, de diálogo aberto, e disponível para resolver situações que surgem ao longo da obra. Isso é muito importante, porque sempre existem surpresas, principalmente em reformas.”</p>
+          <footer>Larissa Costa · Google</footer>
+        </blockquote>
+        <blockquote>
+          <p>“Excelente profissional. Ficamos extremamente satisfeitos com seus projetos em nossa residência e recomendamos a Laura.”</p>
+          <footer>Filipe Silva · Google</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section id="processo">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Da primeira conversa às chaves na mão</h2>
+        <p class="lead">Atendimento presencial em Maceió e região, e online para todo o Brasil.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><b>1</b><h3>Briefing</h3><p>Você conta como é o espaço e o que sonha para ele. Leva uns 3 minutos, logo abaixo.</p></div>
+        <div class="step"><b>2</b><h3>Orçamento</h3><p>Com o briefing em mãos, a Laura retorna com uma proposta feita para o seu caso.</p></div>
+        <div class="step"><b>3</b><h3>Projeto</h3><p>Desenvolvemos a solução completa, alinhada ao seu orçamento e ao seu estilo.</p></div>
+        <div class="step"><b>4</b><h3>Obra e decoração</h3><p>Seguimos com você em todas as fases, até o último objeto no lugar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIEFING GAMIFICADO -->
+  <section class="briefing" id="orcamento">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Vamos desenhar seu projeto</h2>
+        <p class="lead">Cada resposta levanta um andar. No final, a Laura recebe seu briefing completo por e-mail e já chega na primeira conversa sabendo o que você precisa.</p>
+      </div>
+      <div class="bf">
+        <aside class="bf-side" aria-hidden="true">
+          <div class="stage" id="stage">Etapa <b>Terreno</b></div>
+          <div class="build" id="build"></div>
+          <div class="prog"><div class="prog-bar"><i id="bar"></i></div><small id="progtxt">0% construído</small></div>
+        </aside>
+        <div class="bf-main">
+          <form id="bf" novalidate autocomplete="on">
+            <input type="text" name="_honey" class="sr" tabindex="-1" aria-hidden="true">
+            <div id="q"></div>
+            <p class="err" id="err" role="alert"></p>
+            <div class="bf-nav" id="nav">
+              <button type="button" class="back" id="back">← Voltar</button>
+              <span class="keyhint" id="keyhint">Pressione Enter ↵</span>
+              <button type="submit" class="btn" id="next">Continuar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="wrap contact-grid">
+      <div class="info">
+        <h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.05">Venha tomar um café no escritório</h2>
+        <dl>
+          <div><dt>Endereço</dt><dd>Av. Gov. Osman Loureiro, 3506<br>Empresarial Premium Office<br>Mangabeiras, Maceió – AL, 57037-630</dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5582993272454" target="_blank" rel="noopener">(82) 99327-2454</a></dd></div>
+          <div><dt>Redes</dt><dd><a href="https://www.instagram.com/laurarebello.arquitetura/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/laura.rebello.37/" target="_blank" rel="noopener">Facebook</a> · <a href="https://br.pinterest.com/laurarebelloarquitetura/" target="_blank" rel="noopener">Pinterest</a></dd></div>
+        </dl>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a class="btn sea" href="https://wa.me/5582993272454?text=Ol%C3%A1%20Laura!%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Entrar em contato</a>
+          <a class="btn ghost" href="https://maps.google.com/?cid=17852589541913213731" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Mapa do escritório Laura Rebello Arquitetura" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-9.6447138,-35.7117226&z=17&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© <span id="yr"></span> Laura Rebello Arquitetura · Maceió, AL</span>
+    <nav aria-label="Rodapé"><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#orcamento">Orçamento</a><a href="#contato">Contato</a></nav>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5582993272454?text=Ol%C3%A1%20Laura!%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
+  <span>Fale com a Laura</span>
+</a>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <img id="lbimg" alt="">
+  <div class="lb-bar"><span id="lbcap"></span><div><button type="button" id="lbprev" aria-label="Foto anterior">←</button><button type="button" id="lbnext" aria-label="Próxima foto">→</button><button type="button" id="lbclose" aria-label="Fechar">✕</button></div></div>
+</div>
+
+<script>
+/* ============ CONFIGURAÇÃO ============ */
+const CONFIG = {
+  // E-mail que recebe os briefings. Troque pelo e-mail da Laura.
+  // No 1º envio, o FormSubmit manda um e-mail de ativação para este endereço: é só clicar em "Activate".
+  EMAIL_DESTINO: "COLOQUE-O-EMAIL-DA-LAURA@aqui.com",
+  WHATSAPP: "5582993272454"
+};
+
+/* ============ PORTFÓLIO ============ */
+const pin = id => `https://i.pinimg.com/736x/${id}.jpg`;
+const PROJECTS = {
+  "Ed. Martin Sehner": ["a4/6c/42/a46c42e31c76ad9bb81217cba9926d95","85/b7/40/85b7409d656bed43bda4cbf4024153ca","61/29/41/6129412828c920819faa5c7a4f4028da","ef/e7/67/efe7672c16b5eecb27c872355408622e","a7/bb/bb/a7bbbbe10f47cde851185d7e94afa33e","58/d2/8f/58d28fe74f0c949c1fedcbcd8fbc03ad","e0/5d/8a/e05d8a0aa305e187f0092b9da92596e9","f8/80/0f/f8800f8a542a8f3c48338c9b58f611dc","94/f6/93/94f693c14080edb43d7761e84eb7efaa","fa/c9/ec/fac9ec3029249fa4fbbac6df33fd6bca","2e/1c/bf/2e1cbf92ff73facc91cb90f27c830b07","20/da/99/20da994660b318d2a8546deca134365c"],
+  "Ed. High": ["72/ca/ea/72caea6f529b25e5d57af6dbac2c7b6a","58/f6/d5/58f6d59876e68cda630dcb35a6cdc867","1a/c8/f7/1ac8f7021624d3e5207d803d2d07a61d","15/23/d8/1523d8c1914adb53c2cee5b68f4be3e9","a1/71/e3/a171e300ae0e89b346183b5b7b93877e","16/49/e6/1649e6639b6b1e87215d32d7262d073d","13/6e/f4/136ef4129678b0ec6879ef2efa95e1a4","f5/fe/54/f5fe545171dc091e729bec2e754a360a","92/82/e6/9282e618ea58765cb87a4886b524cd1f"],
+  "Ed. Bossa Nova": ["1c/0c/cf/1c0ccf0a36f33cfa8fecd5a4e6e9b5b8","3c/c5/ac/3cc5ac76ddb0966a9bf41ce8b3dc38ae","42/2f/fa/422ffac838face12e406825ea86d3b08","87/c8/c3/87c8c389442fc86d73636a46ada262b5"],
+  "Ed. Bálsamo": ["ad/79/8b/ad798be5beed3121264c3a09f41bf736","6f/6e/6b/6f6e6b52e02ed9cc116aa3cc416dfd63","b4/bc/68/b4bc68e65a58ee8691f478b7ee1104c6"]
+};
+const ALL = Object.entries(PROJECTS).flatMap(([p, ids]) => ids.map(id => ({ p, src: pin(id) })));
+// intercala os projetos na visão "Todos" para a galeria não ficar em blocos
+const mixed = (() => { const lists = Object.entries(PROJECTS).map(([p, ids]) => ids.map(id => ({ p, src: pin(id) }))); const out = []; let i = 0; while (out.length < ALL.length) { lists.forEach(l => l[i] && out.push(l[i])); i++; } return out; })();
+let current = mixed, lbIndex = 0;
+const gal = document.getElementById('gallery'), fil = document.getElementById('filters');
+function renderFilters(active) {
+  const names = ["Todos", ...Object.keys(PROJECTS)];
+  fil.innerHTML = names.map(n => `<button type="button" aria-pressed="${n === active}" data-f="${n}">${n}<span>${n === "Todos" ? ALL.length : PROJECTS[n].length}</span></button>`).join('');
+}
+function renderGallery(name) {
+  current = name === "Todos" ? mixed : ALL.filter(x => x.p === name);
+  gal.innerHTML = current.map((x, i) => `<button type="button" data-i="${i}" aria-label="Ampliar foto ${i + 1}, ${x.p}"><img loading="lazy" src="${x.src}" alt="Ambiente do projeto ${x.p}"><span>${x.p}</span></button>`).join('');
+  renderFilters(name);
+}
+fil.addEventListener('click', e => { const b = e.target.closest('button'); if (b) renderGallery(b.dataset.f); });
+document.querySelectorAll('[data-filter-go]').forEach(a => a.addEventListener('click', () => renderGallery(a.dataset.filterGo)));
+renderGallery("Todos");
+
+const lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg'), lbcap = document.getElementById('lbcap');
+let lastFocus = null;
+function openLb(i) { lbIndex = (i + current.length) % current.length; const x = current[lbIndex]; lbimg.src = x.src; lbimg.alt = 'Ambiente do projeto ' + x.p; lbcap.textContent = `${x.p} · ${lbIndex + 1} de ${current.length}`; if (lb.hidden) { lastFocus = document.activeElement; lb.hidden = false; document.getElementById('lbclose').focus(); } }
+function closeLb() { lb.hidden = true; lastFocus && lastFocus.focus(); }
+gal.addEventListener('click', e => { const b = e.target.closest('button'); if (b) openLb(+b.dataset.i); });
+document.getElementById('lbprev').onclick = () => openLb(lbIndex - 1);
+document.getElementById('lbnext').onclick = () => openLb(lbIndex + 1);
+document.getElementById('lbclose').onclick = closeLb;
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+document.addEventListener('keydown', e => { if (lb.hidden) return; if (e.key === 'Escape') closeLb(); if (e.key === 'ArrowLeft') openLb(lbIndex - 1); if (e.key === 'ArrowRight') openLb(lbIndex + 1); });
+
+/* ============ BRIEFING GAMIFICADO ============ */
+const TERRAIN = {
+  plano: '<svg class="ico" viewBox="0 0 56 28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 22h52"/><rect x="18" y="10" width="16" height="12"/></svg>',
+  declive: '<svg class="ico" viewBox="0 0 56 28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8 54 26"/><rect x="16" y="2" width="14" height="10"/></svg>',
+  aclive: '<svg class="ico" viewBox="0 0 56 28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 26 54 8"/><rect x="26" y="2" width="14" height="10"/></svg>'
+};
+const isArq = a => a.tipo === 'Projeto arquitetônico' || (a.tipo === 'Projeto comercial' && a.comercial === 'Construção nova');
+const isInt = a => a.tipo === 'Projeto de interiores' || a.tipo === 'Projeto de reforma' || (a.tipo === 'Projeto comercial' && a.comercial === 'Reforma de um espaço existente');
+
+const STEPS = [
+  { id: 'intro', stage: 'Terreno', type: 'intro' },
+  { id: 'nome', stage: 'Terreno', type: 'text', q: 'Para começar, como podemos te chamar?', label: 'Seu nome', req: true, ac: 'name' },
+  { id: 'contato', stage: 'Fundação', type: 'contact', q: a => `Prazer, ${first(a.nome)}! Como a Laura fala com você?` },
+  { id: 'local', stage: 'Fundação', type: 'text', q: 'Onde fica a obra ou o projeto?', label: 'Cidade e estado', ph: 'Ex.: Maceió – AL', req: true },
+  { id: 'origem', stage: 'Fundação', type: 'choice', q: 'Como você conheceu o escritório?', opts: ['Google', 'Instagram', 'Indicação', 'Outro'], other: 'Outro', opt: true },
+  { id: 'tipo', stage: 'Estrutura', type: 'choice', q: 'Qual tipo de projeto você quer contratar?', req: true, other: 'Outro',
+    opts: [['Projeto arquitetônico', 'Construir do zero'], ['Projeto de interiores', 'Ambientes, móveis e decoração'], ['Projeto de reforma', 'Mudar o que já existe'], ['Projeto comercial', 'Loja, clínica, escritório'], ['Consultoria', 'Ajustes pontuais'], ['Outro', 'Me conta qual']] },
+  { id: 'comercial', stage: 'Estrutura', type: 'choice', q: 'O espaço comercial é obra nova ou reforma?', req: true, show: a => a.tipo === 'Projeto comercial', opts: ['Construção nova', 'Reforma de um espaço existente'] },
+  // ---- Projetos arquitetônicos
+  { id: 'terreno_tam', stage: 'Estrutura', type: 'text', q: 'Qual o tamanho do terreno?', label: 'Medidas ou área', ph: 'Ex.: 12 x 30 m ou 360 m²', hint: 'Se ainda não souber, pode deixar em branco.', show: isArq },
+  { id: 'metragem', stage: 'Estrutura', type: 'choice', q: 'Quantos metros quadrados você imagina construir?', show: isArq, opts: ['Até 200 m²', 'Até 300 m²', 'Até 400 m²', 'Acima de 400 m²'], opt: true },
+  { id: 'possui', stage: 'Estrutura', type: 'choice', q: 'Você já tem o terreno?', show: isArq, opts: ['Sim', 'Ainda não', 'Preciso de ajuda para escolher', 'Outro'], other: 'Outro', opt: true },
+  { id: 'topografia', stage: 'Estrutura', type: 'choice', q: 'Como é o terreno?', show: isArq, icons: true,
+    opts: [['Terreno plano', '', 'plano'], ['Com declive', 'Descida a partir da rua', 'declive'], ['Com aclive', 'Subida a partir da rua', 'aclive'], ['Outro', '']], other: 'Outro', opt: true },
+  { id: 'situacao', stage: 'Estrutura', type: 'choice', q: 'O terreno fica em…', show: isArq, opts: ['Condomínio', 'Na rua', 'Outro'], other: 'Outro', opt: true },
+  // ---- Reformas e interiores
+  { id: 'estrutural', stage: 'Estrutura', type: 'multi', q: 'Pretende fazer alguma mudança na estrutura?', hint: 'Marque quantas quiser.', show: isInt,
+    opts: ['Demolir ou construir paredes', 'Trocar revestimentos de piso e paredes', 'Fazer forro de gesso', 'Nenhuma mudança estrutural', 'Outro'], other: 'Outro', none: 'Nenhuma mudança estrutural' },
+  { id: 'bancadas', stage: 'Estrutura', type: 'multi', q: 'Pretende trocar as bancadas de marmoraria?', hint: 'Marque quantas quiser.', show: isInt,
+    opts: ['Sim, da cozinha', 'Sim, dos banheiros', 'Não', 'Outro'], other: 'Outro', none: 'Não' },
+  { id: 'iluminacao', stage: 'Acabamento', type: 'choice', q: 'E a iluminação?', show: isInt, opts: ['Manter a existente', 'Fazer um projeto de iluminação novo', 'Outro'], other: 'Outro', opt: true },
+  { id: 'moveis', stage: 'Acabamento', type: 'choice', q: 'Você já tem os móveis soltos (sofá, mesa, cadeiras)?', show: isInt, opts: ['Sim', 'Não', 'Alguns', 'Outro'], other: 'Outro', opt: true },
+  { id: 'planejados', stage: 'Acabamento', type: 'choice', q: 'Pretende fazer móveis planejados?', show: isInt, opts: ['Sim, com loja de planejados', 'Sim, com marceneiro', 'Não, vou manter os existentes', 'Outro'], other: 'Outro', opt: true },
+  // ---- Todos
+  { id: 'atmosfera', stage: 'Acabamento', type: 'pics', q: 'Qual destes ambientes tem mais a sua cara?', hint: 'Bônus: escolha até dois. Ajuda a Laura a entender seu gosto antes da reunião.', max: 2, opt: true,
+    opts: [['Madeira e aconchego', pin('a4/6c/42/a46c42e31c76ad9bb81217cba9926d95')], ['Leve e luminoso', pin('72/ca/ea/72caea6f529b25e5d57af6dbac2c7b6a')], ['Com vista para o mar', pin('1a/c8/f7/1ac8f7021624d3e5207d803d2d07a61d')], ['Contemporâneo e sóbrio', pin('3c/c5/ac/3cc5ac76ddb0966a9bf41ce8b3dc38ae')]] },
+  { id: 'desejos', stage: 'Acabamento', type: 'textarea', q: a => isArq(a) ? 'Descreva brevemente seus desejos para a sua casa' : 'Descreva brevemente seus desejos para o projeto',
+    hint: 'Quantos quartos, quem mora, o que não pode faltar, o que te incomoda hoje. Escreva do seu jeito.' },
+  { id: 'revisao', stage: 'Entrega', type: 'review' },
+  { id: 'fim', stage: 'Chaves na mão', type: 'done' }
+];
+
+const LABELS = { data: 'Data', nome: 'Nome', telefone: 'Telefone / WhatsApp', email: 'E-mail', local: 'Endereço da obra/projeto', origem: 'Como conheceu', tipo: 'Tipo de projeto', comercial: 'Comercial: obra nova ou reforma', terreno_tam: 'Tamanho do terreno', metragem: 'Metragem desejada', possui: 'Já possui o terreno?', topografia: 'Sobre o terreno', situacao: 'O terreno fica em', estrutural: 'Mudanças estruturais', bancadas: 'Bancadas de marmoraria', iluminacao: 'Iluminação', moveis: 'Já possui móveis soltos?', planejados: 'Móveis planejados', atmosfera: 'Estilo que mais combina', desejos: 'Desejos para o projeto' };
+
+let A = {};
+try { A = JSON.parse(localStorage.getItem('lr_briefing') || '{}') || {}; } catch (e) { A = {}; }
+const save = () => { try { localStorage.setItem('lr_briefing', JSON.stringify(A)); } catch (e) {} };
+const first = n => (n || '').trim().split(/\s+/)[0] || '';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const active = () => STEPS.filter(s => !s.show || s.show(A));
+let idx = 0;
+
+const $q = document.getElementById('q'), $err = document.getElementById('err'), $next = document.getElementById('next'), $back = document.getElementById('back'), $nav = document.getElementById('nav'), $keyhint = document.getElementById('keyhint');
+
+/* Prédio que sobe a cada resposta */
+const FLOORS = 6;
+const build = document.getElementById('build');
+(function drawBuilding() {
+  const W = 200, fh = 34, base = 250;
+  let s = `<svg viewBox="0 0 ${W} 270" aria-hidden="true">
+    <line x1="0" y1="${base}" x2="${W}" y2="${base}" stroke="#1E201F" stroke-width="1.5"/>
+    <g stroke="#9C7C5A" stroke-width="1" fill="none"><line x1="20" y1="${base + 12}" x2="180" y2="${base + 12}"/><line x1="20" y1="${base + 7}" x2="20" y2="${base + 17}"/><line x1="180" y1="${base + 7}" x2="180" y2="${base + 17}"/></g>
+    <circle class="glow" cx="100" cy="140" r="110" fill="#F2C879" style="filter:blur(30px)"/>`;
+  for (let f = 0; f < FLOORS; f++) {
+    const y = base - (f + 1) * fh, x = 30, w = 140;
+    s += `<g class="floor" data-f="${f}">
+      <rect x="${x}" y="${y}" width="${w}" height="${fh}" fill="#F4F2EE" stroke="#1E201F" stroke-width="1.5"/>
+      ${[0, 1, 2, 3].map(k => `<rect class="win" x="${x + 12 + k * 32}" y="${y + 9}" width="20" height="16"/>`).join('')}
+      ${f === 0 ? `<rect x="${x + 60}" y="${y + 6}" width="20" height="${fh - 6}" fill="#9C7C5A"/>` : ''}
+    </g>`;
+  }
+  const ry = base - FLOORS * fh;
+  s += `<g class="floor" data-f="roof"><rect x="22" y="${ry - 8}" width="156" height="8" fill="#1E201F"/><rect x="40" y="${ry - 20}" width="30" height="12" fill="none" stroke="#1E201F" stroke-width="1.5"/></g></svg>`;
+  build.innerHTML = s;
+})();
+function updateBuild() {
+  const steps = active(), total = steps.length - 1, i = steps.indexOf(steps[idx]);
+  const pct = Math.round(Math.min(i, total) / total * 100);
+  const floorsOn = Math.round(pct / 100 * FLOORS);
+  build.querySelectorAll('.floor').forEach(g => {
+    const f = g.dataset.f; g.classList.toggle('on', f === 'roof' ? pct >= 95 : +f < floorsOn);
+  });
+  build.classList.toggle('lit', steps[idx].type === 'done');
+  document.getElementById('bar').style.width = pct + '%';
+  document.getElementById('progtxt').textContent = pct + '% construído';
+  document.getElementById('stage').innerHTML = 'Etapa <b>' + steps[idx].stage + '</b>';
+}
+
+function optHTML(step, val, list) {
+  const isMulti = step.type === 'multi' || step.type === 'pics';
+  const sel = isMulti ? (Array.isArray(val) ? val : []) : [val];
+  const keys = 'ABCDEFGHI';
+  return list.map((o, k) => {
+    const [label, sub, icon] = Array.isArray(o) ? o : [o];
+    const pressed = sel.includes(label);
+    if (step.type === 'pics') return `<button type="button" class="opt pic" data-v="${esc(label)}" aria-pressed="${pressed}" data-key="${keys[k]}"><img src="${sub}" alt="" loading="lazy"><b>${esc(label)}</b></button>`;
+    return `<button type="button" class="opt" data-v="${esc(label)}" aria-pressed="${pressed}" data-key="${keys[k]}">${icon && TERRAIN[icon] ? TERRAIN[icon] : ''}${esc(label)}${sub ? `<small>${esc(sub)}</small>` : ''}</button>`;
+  }).join('');
+}
+
+function render() {
+  const steps = active(); if (idx >= steps.length) idx = steps.length - 1;
+  const s = steps[idx]; $err.textContent = '';
+  const q = typeof s.q === 'function' ? s.q(A) : s.q;
+  const n = steps.filter(x => !['intro', 'review', 'done'].includes(x.type));
+  const num = n.indexOf(s) + 1;
+  const kicker = num > 0 ? `<span class="kicker">Pergunta ${num} de ${n.length}${s.opt ? ' · opcional' : ''}</span>` : '';
+  let h = '';
+  $nav.hidden = false; $back.hidden = idx === 0; $keyhint.hidden = false;
+  $next.textContent = 'Continuar';
+  switch (s.type) {
+    case 'intro':
+      h = `<span class="kicker">Briefing · cerca de 3 minutos</span>
+        <h3>Para te passar um orçamento, a Laura precisa conhecer você e o espaço que deseja construir ou reformar.</h3>
+        <p class="hint" style="margin-top:0">São poucas perguntas, a maioria de tocar e seguir. Suas respostas ficam salvas neste aparelho até você enviar.</p>`;
+      $next.textContent = A.nome ? 'Continuar de onde parei' : 'Começar'; $back.hidden = true;
+      break;
+    case 'text':
+      h = `${kicker}<h3>${esc(q)}</h3>${s.hint ? `<p class="hint">${s.hint}</p>` : ''}
+        <div class="field"><label for="f_${s.id}">${s.label}</label><input id="f_${s.id}" name="${s.id}" ${s.ac ? `autocomplete="${s.ac}"` : ''} placeholder="${s.ph || ''}" value="${esc(A[s.id] || '')}"></div>`;
+      break;
+    case 'contact':
+      h = `${kicker}<h3>${esc(q)}</h3>
+        <div class="fields">
+          <div class="field"><label for="f_tel">Telefone / WhatsApp</label><input id="f_tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(82) 90000-0000" value="${esc(A.telefone || '')}"></div>
+          <div class="field"><label for="f_email">E-mail <span style="font-weight:400;color:var(--graphite)">(você recebe uma cópia do briefing)</span></label><input id="f_email" type="email" autocomplete="email" placeholder="voce@email.com" value="${esc(A.email || '')}"></div>
+        </div>`;
+      break;
+    case 'choice': case 'multi': case 'pics': {
+      const v = A[s.id];
+      const otherOn = s.other && (Array.isArray(v) ? v.includes(s.other) : v === s.other);
+      h = `${kicker}<h3>${esc(q)}</h3>${s.hint ? `<p class="hint">${s.hint}</p>` : ''}
+        <div class="opts ${s.type === 'pics' ? 'pics' : ''}" id="opts">${optHTML(s, v, s.opts)}</div>
+        ${s.other ? `<div class="field other-in" id="otherWrap" ${otherOn ? '' : 'hidden'}><label for="f_other">Qual?</label><input id="f_other" value="${esc(A[s.id + '_outro'] || '')}"></div>` : ''}`;
+      if (s.type === 'choice') $keyhint.textContent = 'Use as letras A, B, C…'; else $keyhint.textContent = 'Pressione Enter ↵';
+      if (s.opt) $next.textContent = (Array.isArray(v) ? v.length : v) ? 'Continuar' : 'Pular';
+      break;
+    }
+    case 'textarea':
+      h = `${kicker}<h3>${esc(q)}</h3><p class="hint">${s.hint}</p>
+        <div class="field"><label class="sr" for="f_${s.id}">Seus desejos</label><textarea id="f_${s.id}" placeholder="Ex.: Somos um casal com dois filhos pequenos. Queremos uma cozinha aberta para receber os amigos e um home office com luz natural.">${esc(A[s.id] || '')}</textarea></div>`;
+      $keyhint.hidden = true;
+      break;
+    case 'review': {
+      const rows = collect();
+      h = `<span class="kicker">Último andar</span><h3>Confira seu briefing antes de enviar</h3>
+        <dl class="summary">${rows.filter(([k]) => k !== 'data').map(([k, v]) => `<div><dt>${LABELS[k]}</dt><dd>${esc(v) || '—'}<button type="button" data-edit="${k}">editar</button></dd></div>`).join('')}</dl>`;
+      $next.textContent = 'Enviar briefing para a Laura'; $keyhint.hidden = true;
+      break;
+    }
+    case 'done':
+      h = `<span class="kicker">Projeto em andamento</span>
+        <h3>Pronto, ${esc(first(A.nome))}! As luzes do seu projeto já estão acesas.</h3>
+        <p class="hint" style="margin-top:0">${A._sent === 'email' ? 'A Laura recebeu seu briefing por e-mail' + (A.email ? ` e uma cópia foi para ${esc(A.email)}` : '') + '. Ela vai responder pelo WhatsApp em breve.' : 'Para garantir que a Laura receba agora, envie o resumo pelo WhatsApp.'}</p>
+        <p class="hint" style="margin-top:0">Quer adiantar a conversa? Mande um oi com o resumo já preenchido.</p>
+        <div class="done-actions"><a class="btn sea" target="_blank" rel="noopener" href="${waLink()}">Enviar resumo no WhatsApp</a><button type="button" class="btn ghost" id="restart">Fazer outro briefing</button></div>`;
+      $nav.hidden = true;
+      break;
+  }
+  $q.innerHTML = `<div class="bf-q">${h}</div>`;
+  updateBuild();
+  const fi = $q.querySelector('input:not([type=hidden]),textarea');
+  if (fi && started) fi.focus({ preventScroll: true });
+  bindStep(s);
+}
+let started = false;
+
+function bindStep(s) {
+  const opts = document.getElementById('opts');
+  if (opts) opts.addEventListener('click', e => {
+    const b = e.target.closest('.opt'); if (!b) return;
+    pick(s, b.dataset.v);
+  });
+  const ow = document.getElementById('f_other');
+  if (ow) ow.addEventListener('input', () => { A[s.id + '_outro'] = ow.value; save(); });
+  $q.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => {
+    const k = b.dataset.edit === 'telefone' || b.dataset.edit === 'email' ? 'contato' : b.dataset.edit;
+    idx = active().findIndex(x => x.id === k); render();
+  });
+  const r = document.getElementById('restart');
+  if (r) r.onclick = () => { A = {}; save(); idx = 0; render(); };
+  $q.querySelectorAll('input,textarea').forEach(el => el.addEventListener('input', () => { readInputs(s); save(); }));
+  const tel = document.getElementById('f_tel');
+  if (tel) tel.addEventListener('input', () => { tel.value = maskTel(tel.value); A.telefone = tel.value; save(); });
+}
+
+function pick(s, v) {
+  if (s.type === 'choice') {
+    A[s.id] = v; save();
+    if (s.other && v === s.other) { render(); document.getElementById('f_other').focus(); return; }
+    render(); setTimeout(go, 260); // avança sozinho: menos cliques
+  } else {
+    let arr = Array.isArray(A[s.id]) ? A[s.id].slice() : [];
+    if (arr.includes(v)) arr = arr.filter(x => x !== v);
+    else {
+      if (s.none && v === s.none) arr = [v];
+      else { arr = arr.filter(x => x !== s.none); arr.push(v); }
+      if (s.max && arr.length > s.max) arr.shift();
+    }
+    A[s.id] = arr; save(); render();
+  }
+}
+
+function readInputs(s) {
+  if (s.type === 'text') A[s.id] = document.getElementById('f_' + s.id).value.trim();
+  if (s.type === 'textarea') A[s.id] = document.getElementById('f_' + s.id).value.trim();
+  if (s.type === 'contact') { A.telefone = document.getElementById('f_tel').value.trim(); A.email = document.getElementById('f_email').value.trim(); }
+}
+function maskTel(v) {
+  const d = v.replace(/\D/g, '').slice(0, 11);
+  if (d.length <= 2) return d.length ? '(' + d : '';
+  if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+  if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+  return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+}
+
+function validate(s) {
+  if (s.type === 'text' && s.req && !A[s.id]) return 'Preencha este campo para continuar.';
+  if (s.type === 'contact') {
+    if (A.telefone.replace(/\D/g, '').length < 10) return 'Digite um telefone com DDD, por exemplo (82) 99999-9999.';
+    if (A.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(A.email)) return 'Esse e-mail parece incompleto. Confira ou deixe em branco.';
+  }
+  if (s.type === 'choice' && s.req && !A[s.id]) return 'Escolha uma opção para continuar.';
+  if (s.other) {
+    const v = A[s.id]; const on = Array.isArray(v) ? v.includes(s.other) : v === s.other;
+    if (on && !(A[s.id + '_outro'] || '').trim()) return 'Conte qual é a outra opção.';
+  }
+  return '';
+}
+
+function go() {
+  const steps = active(), s = steps[idx];
+  readInputs(s);
+  const e = validate(s); if (e) { $err.textContent = e; return; }
+  save(); started = true;
+  if (s.type === 'review') return send();
+  idx = Math.min(idx + 1, active().length - 1); render();
+}
+document.getElementById('bf').addEventListener('submit', e => { e.preventDefault(); go(); });
+$back.onclick = () => { idx = Math.max(0, idx - 1); render(); };
+document.addEventListener('keydown', e => {
+  if (!lb.hidden || ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+  const s = active()[idx]; const box = document.getElementById('bf').getBoundingClientRect();
+  if (box.bottom < 0 || box.top > innerHeight) return;
+  if ((s.type === 'choice' || s.type === 'multi' || s.type === 'pics') && /^[a-iA-I]$/.test(e.key)) {
+    const o = document.querySelector(`#opts .opt[data-key="${e.key.toUpperCase()}"]`); if (o) { e.preventDefault(); pick(s, o.dataset.v); }
+  }
+});
+
+function val(k) {
+  const v = A[k]; if (v == null || (Array.isArray(v) && !v.length) || v === '') return '';
+  let out = Array.isArray(v) ? v.join(', ') : v;
+  if (A[k + '_outro'] && (Array.isArray(v) ? v.includes('Outro') : v === 'Outro')) out = out.replace('Outro', 'Outro: ' + A[k + '_outro']);
+  return out;
+}
+function collect() {
+  const ids = active().map(s => s.id).flatMap(id => id === 'contato' ? ['telefone', 'email'] : [id]).filter(id => LABELS[id]);
+  return [['data', new Date().toLocaleDateString('pt-BR')], ...ids.map(k => [k, val(k)])];
+}
+function waLink() {
+  const rows = collect().filter(([, v]) => v);
+  const txt = `Olá, Laura! Preenchi o briefing pelo site:\n\n` + rows.map(([k, v]) => `*${LABELS[k]}:* ${v}`).join('\n');
+  return `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(txt)}`;
+}
+
+async function send() {
+  const rows = collect();
+  if (document.querySelector('[name=_honey]').value) return;
+  $next.disabled = true; $next.textContent = 'Enviando…';
+  const payload = Object.fromEntries(rows.map(([k, v]) => [LABELS[k], v || '—']));
+  payload._subject = `Novo briefing pelo site: ${A.nome} (${val('tipo')})`;
+  payload._template = 'table';
+  payload._captcha = 'false';
+  if (A.email) { payload.email = A.email; payload._replyto = A.email; payload._autoresponse = `Olá, ${first(A.nome)}! Recebemos seu briefing e a Laura vai entrar em contato pelo WhatsApp em breve. Obrigada por confiar no escritório Laura Rebello Arquitetura.`; }
+  let ok = false;
+  if (!CONFIG.EMAIL_DESTINO.includes('COLOQUE')) {
+    try {
+      const r = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(CONFIG.EMAIL_DESTINO), { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) });
+      const j = await r.json().catch(() => ({}));
+      ok = r.ok && String(j.success) !== 'false';
+    } catch (e) { ok = false; }
+  }
+  $next.disabled = false;
+  A._sent = ok ? 'email' : 'whatsapp'; save();
+  idx = active().length - 1; render();
+  if (ok) { const keep = { nome: A.nome, email: A.email, _sent: 'email' }; try { localStorage.removeItem('lr_briefing'); } catch (e) {} }
+}
+
+/* Cards de serviço já escolhem o tipo de projeto */
+const PICK = { arq: 'Projeto arquitetônico', int: 'Projeto de interiores', com: 'Projeto comercial', con: 'Consultoria' };
+document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => { A.tipo = PICK[a.dataset.pick]; save(); if (idx === 0) { started = true; idx = 1; render(); } }));
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
