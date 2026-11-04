@@ -117,6 +117,21 @@ section{padding-block:104px}
 @media (max-width:1060px){.services{grid-template-columns:repeat(3,minmax(0,1fr))}.services .svc:nth-child(n+4) figure{aspect-ratio:4/3}}
 @media (max-width:640px){.services{grid-template-columns:1fr}.svc{grid-template-columns:120px 1fr;grid-template-rows:auto}.svc figure,.services .svc:nth-child(n+4) figure{aspect-ratio:auto;height:100%}}
 
+/* Sobre a Laura: retrato em duotone, mesclado ao fundo a 50% */
+.about{position:relative;overflow:hidden;background:var(--paper);padding-block:120px;isolation:isolate}
+.about-photo{position:absolute;left:0;top:0;height:100%;width:62%;object-fit:cover;object-position:30% 40%;opacity:.5;mix-blend-mode:multiply;z-index:-1;
+  -webkit-mask-image:linear-gradient(90deg,#000 55%,transparent);mask-image:linear-gradient(90deg,#000 55%,transparent)}
+.about-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr)}
+.about-txt{grid-column:2;display:grid;gap:22px;justify-items:start;max-width:34em}
+.about-txt h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:1;text-transform:uppercase}
+.about-txt p{color:var(--graphite)}
+@media (max-width:860px){
+  .about{padding-block:0 72px}
+  .about-photo{position:relative;width:100%;height:auto;aspect-ratio:4/3.4;object-position:30% 15%;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent);mask-image:linear-gradient(180deg,#000 60%,transparent)}
+  .about-grid{grid-template-columns:1fr;margin-top:-40px}
+  .about-txt{grid-column:1}
+}
+
 /* Projeto em destaque */
 .feature{background:var(--ink);color:var(--on-ink);padding-block:0}
 .feature-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);min-height:560px}
@@ -276,6 +291,7 @@ footer.site a:hover{color:var(--ink)}
       <b>LAURA REBELLO</b><small>ARQUITETURA</small>
     </a>
     <nav class="links" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
       <a href="#servicos">Serviços</a>
       <a href="#projetos">Projetos</a>
       <a href="#depoimentos">Depoimentos</a>
@@ -342,6 +358,21 @@ footer.site a:hover{color:var(--ink)}
           <figure><img loading="lazy" src="https://i.pinimg.com/736x/a7/bb/bb/a7bbbbe10f47cde851185d7e94afa33e.jpg" alt="Cristaleira iluminada com portas de vidro"></figure>
           <div><h3>Consultorias</h3><p>Dúvidas resolvidas e soluções sem grandes interferências no ambiente.</p></div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE A LAURA -->
+  <section class="about" id="sobre" aria-labelledby="about-t">
+    <img class="about-photo" src="img/laura.jpg" alt="Laura Rebello sentada no chão do escritório, trabalhando no notebook" loading="lazy">
+    <div class="wrap about-grid">
+      <div class="about-txt">
+        <span class="tag">Quem assina</span>
+        <h2 id="about-t">Laura Rebello</h2>
+        <div class="cota ends" style="max-width:280px"><span>arquiteta e urbanista</span></div>
+        <p>Há mais de 16 anos eu transformo sonhos em espaços atemporais, com personalidade, funcionalidade e conforto. Cada projeto é único e pensado a partir do orçamento, da rotina e das expectativas de quem vai viver ali.</p>
+        <p>Acompanho meus clientes em todas as fases, da construção à decoração. É assim que mais de mil ambientes saíram do papel com a assinatura do escritório.</p>
+        <a class="btn" href="#orcamento">Conversar sobre meu projeto</a>
       </div>
     </div>
   </section>
