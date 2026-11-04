@@ -77,11 +77,41 @@ nav.links a:hover{color:var(--ink);border-color:var(--ink)}
 section{scroll-margin-top:76px}
 
 /* Hero */
-.hero{padding-block:56px 0}
+.hero{padding-block:56px 0;overflow-x:clip}
 .hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:end}
 .hero h1{font-size:clamp(2.6rem,6.2vw,5.6rem);line-height:.98;text-transform:uppercase;margin-top:22px}
 .hero .lead{margin-top:28px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+/* Hero: retrato da Laura em cor a 50% na margem esquerda, texto avança para o meio, vista grande à direita */
+.hero{position:relative}
+.hero .wrap{position:relative;z-index:1}
+.hero-portrait{position:absolute;left:-3vw;top:0;width:min(36vw,580px);height:calc(100% - 120px);margin:0;z-index:0;pointer-events:none}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:46% 12%;opacity:.5;mix-blend-mode:multiply;
+  -webkit-mask-image:radial-gradient(ellipse 50% 54% at 44% 40%,#000 52%,transparent 100%);mask-image:radial-gradient(ellipse 50% 54% at 44% 40%,#000 52%,transparent 100%);
+  animation:portrait 1.8s .2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes portrait{from{opacity:0;transform:translateX(-12px)}to{opacity:.5;transform:none}}
+.hero-portrait figcaption{position:absolute;left:max(20px,env(safe-area-inset-left,0px));bottom:6%;font-size:.74rem;color:var(--oak);writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.08em}
+.hero-text{padding-left:clamp(0px,12vw,190px)}
+.hero-grid{grid-template-columns:minmax(0,6fr) minmax(0,6fr)}
+.hero h1{font-size:clamp(2.6rem,4.3vw,4rem)}
+@media (max-width:1180px){
+  .hero-text{padding-left:0}
+  .hero-portrait figcaption{display:none}
+  .hero{padding-top:min(30vw,300px)}
+  .hero-portrait{left:0;width:44vw;height:min(46vw,440px)}
+  .hero-portrait img{object-position:50% 8%}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-text{max-width:640px}
+  .hero-photo{aspect-ratio:16/10}
+}
+@media (max-width:860px){
+  .hero-photo{aspect-ratio:4/3.8}
+  .hero-text{padding-left:0}
+  .hero{padding-top:min(62vw,300px)}
+  .hero-portrait{width:78vw;height:min(92vw,440px)}
+  .hero-portrait img{object-position:50% 8%;-webkit-mask-image:radial-gradient(ellipse 52% 50% at 46% 34%,#000 50%,transparent 100%);mask-image:radial-gradient(ellipse 52% 50% at 46% 34%,#000 50%,transparent 100%)}
+  .hero-portrait figcaption{display:none}
+}
 .hero-photo{position:relative;aspect-ratio:4/4.4;max-width:100%;overflow:hidden;background:var(--paper)}
 .hero-photo img{width:100%;height:100%;object-fit:cover;animation:settle 1.6s cubic-bezier(.2,.7,.2,1) both}
 @keyframes settle{from{transform:scale(1.06)}to{transform:scale(1)}}
@@ -289,9 +319,13 @@ footer.site a:hover{color:var(--ink)}
 <main id="inicio">
   <!-- HERO -->
   <section class="hero">
+    <figure class="hero-portrait">
+      <img src="img/laura-retrato.jpg" alt="Retrato de Laura Rebello, arquiteta" fetchpriority="high">
+      <figcaption>Laura Rebello, arquiteta</figcaption>
+    </figure>
     <div class="wrap">
       <div class="hero-grid">
-        <div>
+        <div class="hero-text">
           <div class="cota ends" style="max-width:340px"><span>16 anos · Maceió para o Brasil</span></div>
           <h1>Espaços que vivem com você</h1>
           <p class="lead">Arquitetura e interiores feitos sob medida para o seu orçamento, a sua rotina e o seu jeito de morar. Acompanhamos cada fase da obra, da construção à decoração.</p>
